@@ -1,0 +1,12 @@
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting

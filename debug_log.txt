@@ -1,12 +1,612 @@
-DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using selector: SelectSelector
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
 DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="hoxp0oq48" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTg4OTA1NzE1Nzg5MDM1Nzc=</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj04ODkwNTcxNTc4OTAzNTc3NTExZjI3NmYtMTEzMC00MjM0LWJhNDYtYTNkM2FjN2IzZmRkLHM9Qkl6c1k0UzV4ZGVNWDUrbXVvTzNsL2FTdTdDRkUwQlQsaT00MDk2</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9ODg5MDU3MTU3ODkwMzU3NzUxMWYyNzZmLTExMzAtNDIzNC1iYTQ2LWEzZDNhYzdiM2ZkZCxwPTNHOGpkYURZUzZzaXJiUHViT3hMWkRGUHVHVT0=</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj1lc1cwZnNPc2hyZytLOTJMOVFtYUZOYUFhNkU9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="hoxp0oq48" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="18ff6cfc008b41019744570069669bc7" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="18ff6cfc008b41019744570069669bc7" to="alumchat.xyz/hoxp0oq48"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/hoxp0oq48</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/hoxp0oq48
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="a7706c1a183b4f9296f2dc55a89de74f" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="1a183bd3b70740b0baaabe4556456c19" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="a7706c1a183b4f9296f2dc55a89de74f" xml:lang="en" from="prueba20090@alumchat.xyz/hoxp0oq48" to="prueba20090@alumchat.xyz/hoxp0oq48" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="1a183bd3b70740b0baaabe4556456c19" to="prueba20090@alumchat.xyz/hoxp0oq48"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="673-28681" to="prueba20090@alumchat.xyz/hoxp0oq48" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="673-28681" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
 DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
 DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
 DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
 DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+ERROR:slixmpp.plugins.base:Unable to load plugin: xep_0363
+Traceback (most recent call last):
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\base.py", line 78, in load_plugin
+    __import__(module)
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\xep_0363\__init__.py", line 8, in <module>
+    from slixmpp.plugins.xep_0363.http_upload import (
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\xep_0363\http_upload.py", line 9, in <module>
+    from aiohttp import ClientSession
+ModuleNotFoundError: No module named 'aiohttp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\base.py", line 82, in load_plugin
+    __import__(module)
+ModuleNotFoundError: No module named 'slixmpp.features.xep_0363'
+ERROR:slixmpp.plugins.base:Unable to load plugin: xep_0363
+Traceback (most recent call last):
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\base.py", line 78, in load_plugin
+    __import__(module)
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\xep_0363\__init__.py", line 8, in <module>
+    from slixmpp.plugins.xep_0363.http_upload import (
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\xep_0363\http_upload.py", line 9, in <module>
+    from aiohttp import ClientSession
+ModuleNotFoundError: No module named 'aiohttp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Juan_Avila\AppData\Local\Programs\Python\Python310\lib\site-packages\slixmpp\plugins\base.py", line 82, in load_plugin
+    __import__(module)
+ModuleNotFoundError: No module named 'slixmpp.features.xep_0363'
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0071: XHTML-IM
 DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6nesuuiqtw" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTk3NTU1ODA1NTU0NTIwOTg=</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj05NzU1NTgwNTU1NDUyMDk4NWVjNGRhNTItZWE3MC00MGNhLTgzMTktY2VlZDEwMmU2YzUwLHM9Qkl6c1k0UzV4ZGVNWDUrbXVvTzNsL2FTdTdDRkUwQlQsaT00MDk2</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9OTc1NTU4MDU1NTQ1MjA5ODVlYzRkYTUyLWVhNzAtNDBjYS04MzE5LWNlZWQxMDJlNmM1MCxwPUZ1dkxHdzlHOCtndUp3ZnhicWxoMERoMSs3WT0=</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj16d0YzTDJ2NUg1eDF5Y0lLbXIzaGptNHN3MUE9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6nesuuiqtw" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="be199f7bbd9041e9ba01586ab12422a1" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="be199f7bbd9041e9ba01586ab12422a1" to="alumchat.xyz/6nesuuiqtw"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/6nesuuiqtw</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/6nesuuiqtw
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="3b5f6fadf5c04b09b0398b69dede18a0" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="d9bf21c9459c4a5aa4816b02875e66ff" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="3b5f6fadf5c04b09b0398b69dede18a0" xml:lang="en" from="prueba20090@alumchat.xyz/6nesuuiqtw" to="prueba20090@alumchat.xyz/6nesuuiqtw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="d9bf21c9459c4a5aa4816b02875e66ff" to="prueba20090@alumchat.xyz/6nesuuiqtw"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="639-28706" to="prueba20090@alumchat.xyz/6nesuuiqtw" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="639-28706" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="398-28708" from="alumchat.xyz" to="prueba20090@alumchat.xyz/6nesuuiqtw"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="398-28708" to="alumchat.xyz" />
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0198: Stream Management
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0085: Chat State Notifications
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0184: Message Delivery Receipts
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6nxynw630b" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTc1MTk3NTE3NTY1Nzg5NTI=</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj03NTE5NzUxNzU2NTc4OTUyODY4YjRhODQtNmJkMy00N2U0LWEzOWYtZjA2ODYxOTMzZTc5LHM9Qkl6c1k0UzV4ZGVNWDUrbXVvTzNsL2FTdTdDRkUwQlQsaT00MDk2</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9NzUxOTc1MTc1NjU3ODk1Mjg2OGI0YTg0LTZiZDMtNDdlNC1hMzlmLWYwNjg2MTkzM2U3OSxwPXorTE9CZ0llOThLRlhsd0JybTl6ek1NWDJlWT0=</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj1WWTl2Q0xRQTVXQ1ZrS21DeGJ1TFRXR3lrNFU9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6nxynw630b" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="0f36ddc602184a04a33be5e3434bd054" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="0f36ddc602184a04a33be5e3434bd054" to="alumchat.xyz/6nxynw630b"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/6nxynw630b</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/6nxynw630b
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling SM
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="1742d8faf0624bde9e96ff1c062455d1" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling outgoing SM: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="3b5f6fadf5c04b09b0398b69dede18a0" xml:lang="en" from="prueba20090@alumchat.xyz/6nesuuiqtw" to="prueba20090@alumchat.xyz/6nxynw630b" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/6nxynw630b" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="1742d8faf0624bde9e96ff1c062455d1" to="prueba20090@alumchat.xyz/6nxynw630b"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <enabled xmlns="urn:xmpp:sm:3" resume="true" id="Nm54eW53NjMwYgA2bnh5bnc2MzBi" location="alumchat.xyz" max="600" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sm_enabled
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="prueba20090@alumchat.xyz/6nesuuiqtw" to="prueba20090@alumchat.xyz/6nxynw630b" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="576-28714" to="prueba20090@alumchat.xyz/6nxynw630b" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="576-28714" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0198: Stream Management
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0085: Chat State Notifications
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0184: Message Delivery Receipts
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="7mv6ahi4wx" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTA4MjkxNjU0ODkwNzI5Njgz</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj0wODI5MTY1NDg5MDcyOTY4MzBjN2ZhZTU0LTkxMjEtNDExMC1hMWI4LWRjZDNmODgwZGQ3NCxzPUJJenNZNFM1eGRlTVg1K211b08zbC9hU3U3Q0ZFMEJULGk9NDA5Ng==</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9MDgyOTE2NTQ4OTA3Mjk2ODMwYzdmYWU1NC05MTIxLTQxMTAtYTFiOC1kY2QzZjg4MGRkNzQscD1LdW5NdVJJeUU1SlFadWo5VFJoNzk5MHoySEk9</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj16QmQyUDhlaTJncGsyeUtqcVB3R1Y0TjdDQ1E9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="7mv6ahi4wx" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="8e25f9ff59e34c5d8d03d382a1c60f26" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="8e25f9ff59e34c5d8d03d382a1c60f26" to="alumchat.xyz/7mv6ahi4wx"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/7mv6ahi4wx</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/7mv6ahi4wx
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling SM
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="cebd215987cb4eafb6dd01e5dea0f02b" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="45a2762181f84be0bbdd6ea409eb30a6" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling outgoing SM: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/7mv6ahi4wx" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="cebd215987cb4eafb6dd01e5dea0f02b" xml:lang="en" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/7mv6ahi4wx" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="45a2762181f84be0bbdd6ea409eb30a6" to="prueba20090@alumchat.xyz/7mv6ahi4wx"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <enabled xmlns="urn:xmpp:sm:3" resume="true" id="N212NmFoaTR3eAA3bXY2YWhpNHd4" location="alumchat.xyz" max="600" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sm_enabled
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="756-28724" to="prueba20090@alumchat.xyz/7mv6ahi4wx" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="756-28724" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0198: Stream Management
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0085: Chat State Notifications
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0184: Message Delivery Receipts
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6v01losj1m" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTgyNTk4ODc0Nzk0MjA2Nw==</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj04MjU5ODg3NDc5NDIwNjcwMTNhOWRiNC00ZGE1LTQ5M2EtYTViMC03ZGQ0MmQzNmM2NTIscz1CSXpzWTRTNXhkZU1YNSttdW9PM2wvYVN1N0NGRTBCVCxpPTQwOTY=</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9ODI1OTg4NzQ3OTQyMDY3MDEzYTlkYjQtNGRhNS00OTNhLWE1YjAtN2RkNDJkMzZjNjUyLHA9QkhFSWpiVzM2ZWxaWHhiTVY4ajNYdGpoMHJRPQ==</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj1jcE5nd0pyVXhSa1N4RFcxcFlheEd2OEFDSmc9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="6v01losj1m" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="073ec98ee202497c9efdd9c1ca1686b2" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="073ec98ee202497c9efdd9c1ca1686b2" to="alumchat.xyz/6v01losj1m"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/6v01losj1m</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/6v01losj1m
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling SM
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="296c620eb491467fae19ece9c962388d" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="ecb7801d0713473a89d92e2af431c22a" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling outgoing SM: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="cebd215987cb4eafb6dd01e5dea0f02b" xml:lang="en" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="296c620eb491467fae19ece9c962388d" xml:lang="en" from="prueba20090@alumchat.xyz/6v01losj1m" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="ecb7801d0713473a89d92e2af431c22a" to="prueba20090@alumchat.xyz/6v01losj1m"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <enabled xmlns="urn:xmpp:sm:3" resume="true" id="NnYwMWxvc2oxbQA2djAxbG9zajFt" location="alumchat.xyz" max="600" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sm_enabled
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="426-28733" to="prueba20090@alumchat.xyz/6v01losj1m" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="426-28733" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0198: Stream Management
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0085: Chat State Notifications
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0184: Message Delivery Receipts
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="7b0pwoivr5" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTIyNzI3NzMzNDEyNjQ3NDc3</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj0yMjcyNzczMzQxMjY0NzQ3Nzc3YmMyM2ZlLTVlYTItNGQ2NC1iM2QzLTRkNzBiZjNiMDA0MyxzPUJJenNZNFM1eGRlTVg1K211b08zbC9hU3U3Q0ZFMEJULGk9NDA5Ng==</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9MjI3Mjc3MzM0MTI2NDc0Nzc3N2JjMjNmZS01ZWEyLTRkNjQtYjNkMy00ZDcwYmYzYjAwNDMscD12T0d0WU5ObE1mNjVMNSsyYndhc2VUWHpQMUk9</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj0wOEtYZUEvUHQ1dEQyUkp5c2hkTWVxQ2o3NUk9</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="7b0pwoivr5" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="3388ff952be74d1d88307e31dc04a499" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="3388ff952be74d1d88307e31dc04a499" to="alumchat.xyz/7b0pwoivr5"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/7b0pwoivr5</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/7b0pwoivr5
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling SM
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="21fecf26d9824be380b3edbe1648c3cf" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="a91ae7dba3a14030981182440e081144" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling outgoing SM: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="cebd215987cb4eafb6dd01e5dea0f02b" xml:lang="en" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="21fecf26d9824be380b3edbe1648c3cf" xml:lang="en" from="prueba20090@alumchat.xyz/7b0pwoivr5" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="296c620eb491467fae19ece9c962388d" xml:lang="en" from="prueba20090@alumchat.xyz/6v01losj1m" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="21fecf26d9824be380b3edbe1648c3cf" xml:lang="en" from="prueba20090@alumchat.xyz/7b0pwoivr5" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="a91ae7dba3a14030981182440e081144" to="prueba20090@alumchat.xyz/7b0pwoivr5"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <enabled xmlns="urn:xmpp:sm:3" resume="true" id="N2IwcHdvaXZyNQA3YjBwd29pdnI1" location="alumchat.xyz" max="600" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sm_enabled
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="750-28739" to="prueba20090@alumchat.xyz/7b0pwoivr5" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="750-28739" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="674-28742" from="alumchat.xyz" to="prueba20090@alumchat.xyz/6v01losj1m"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="674-28742" to="alumchat.xyz" />
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="822-28744" from="alumchat.xyz" to="prueba20090@alumchat.xyz/7b0pwoivr5"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="822-28744" to="alumchat.xyz" />
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: STARTTLS
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: Resource Binding
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 3920: Stream Feature: Start Session
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Roster Versioning
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6121: Stream Feature: Subscription Pre-Approval
+DEBUG:slixmpp.plugins.base:Loaded Plugin: RFC 6120: Stream Feature: SASL
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0030: Service Discovery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0199: XMPP Ping
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0203: Delayed Delivery
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0004: Data Forms
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0045: Multi-User Chat
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0198: Stream Management
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0066: Out of Band Data
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0077: In-Band Registration
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0085: Chat State Notifications
+DEBUG:slixmpp.plugins.base:Loaded Plugin: XEP-0184: Message Delivery Receipts
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connecting
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying SRV records for alumchat.xyz
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz SRV records: (4, 'Domain name not found')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for AAAA records.
+DEBUG:slixmpp.xmlstream.resolver:DNS: Exception while querying for alumchat.xyz AAAA records: (1, 'DNS server returned answer with no data')
+DEBUG:slixmpp.xmlstream.resolver:DNS: Querying alumchat.xyz for A records.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: connected
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="aa66whk8rw" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><starttls xmlns="urn:ietf:params:xml:ns:xmpp-tls" /><mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl"><mechanism>PLAIN</mechanism><mechanism>SCRAM-SHA-1</mechanism><mechanism>CRAM-MD5</mechanism><mechanism>DIGEST-MD5</mechanism></mechanisms><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><register xmlns="http://jabber.org/features/iq-register" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <auth xmlns="urn:ietf:params:xml:ns:xmpp-sasl" mechanism="SCRAM-SHA-1">biwsbj1wcnVlYmEyMDA5MCxyPTQwNzk4OTcyMzU1MDc5NzQz</auth>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cj00MDc5ODk3MjM1NTA3OTc0MzQzNDlmMTIyLWQwNGMtNDk4MC1hMmYzLTgyNWFlMDQyOTlkOCxzPUJJenNZNFM1eGRlTVg1K211b08zbC9hU3U3Q0ZFMEJULGk9NDA5Ng==</challenge>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">Yz1iaXdzLHI9NDA3OTg5NzIzNTUwNzk3NDM0MzQ5ZjEyMi1kMDRjLTQ5ODAtYTJmMy04MjVhZTA0Mjk5ZDgscD1VRDdJUnpnYXY2azhTRmhTL3hpRGJGNi9RUzA9</response>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dj12R2JZVmUvUW00L3BwV01DbEFTajhRVWtUYW89</success>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: auth_success
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <stream:stream to='alumchat.xyz' xmlns:stream='http://etherx.jabber.org/streams' xmlns='jabber:client' xml:lang='en' version='1.0'>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:stream from="alumchat.xyz" id="aa66whk8rw" xml:lang="en" version="1.0">
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <stream:features xmlns="http://etherx.jabber.org/streams"><compression xmlns="http://jabber.org/features/compress"><method>zlib</method></compression><ver xmlns="urn:xmpp:features:rosterver" /><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /><session xmlns="urn:ietf:params:xml:ns:xmpp-session"><optional /></session><sm xmlns="urn:xmpp:sm:2" /><sm xmlns="urn:xmpp:sm:3" /><c xmlns="http://jabber.org/protocol/caps" hash="sha-1" node="https://www.igniterealtime.org/projects/openfire/" ver="71l6JiXJFL3a6ycvuFwc+/K7CEk=" /></stream:features>
+DEBUG:slixmpp.features.feature_rosterver.rosterver:Enabling roster versioning.
+DEBUG:slixmpp.features.feature_bind.bind:Requesting resource: 
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="78a770542d5d464697f56c5b97ab07a5" type="set"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="78a770542d5d464697f56c5b97ab07a5" to="alumchat.xyz/aa66whk8rw"><bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"><jid>prueba20090@alumchat.xyz/aa66whk8rw</jid></bind></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_bind
+INFO:slixmpp.features.feature_bind.bind:JID set to: prueba20090@alumchat.xyz/aa66whk8rw
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: session_start
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling SM
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sent_presence
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence id="02208b063c9a4121852979483ed76a17" xml:lang="en" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="4f5dfee5e0934438a067aa4da5392cd3" type="get"><query xmlns="jabber:iq:roster" ver="" /></iq>
+DEBUG:slixmpp.plugins.xep_0198.stream_management:enabling outgoing SM: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <enable xmlns="urn:xmpp:sm:3" resume="true" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="cebd215987cb4eafb6dd01e5dea0f02b" xml:lang="en" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="02208b063c9a4121852979483ed76a17" xml:lang="en" from="prueba20090@alumchat.xyz/aa66whk8rw" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="02208b063c9a4121852979483ed76a17" xml:lang="en" from="prueba20090@alumchat.xyz/aa66whk8rw" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="784a3cd07af343f0880698ee0cf59c24" xml:lang="en" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="21fecf26d9824be380b3edbe1648c3cf" xml:lang="en" from="prueba20090@alumchat.xyz/7b0pwoivr5" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="296c620eb491467fae19ece9c962388d" xml:lang="en" from="prueba20090@alumchat.xyz/6v01losj1m" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="02208b063c9a4121852979483ed76a17" xml:lang="en" from="prueba20090@alumchat.xyz/aa66whk8rw" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="4f5dfee5e0934438a067aa4da5392cd3" to="prueba20090@alumchat.xyz/aa66whk8rw"><query xmlns="jabber:iq:roster" ver="-1805653224" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <enabled xmlns="urn:xmpp:sm:3" resume="true" id="YWE2NndoazhydwBhYTY2d2hrOHJ3" location="alumchat.xyz" max="600" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: sm_enabled
+DEBUG:slixmpp.clientxmpp:Finished processing stream features.
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: stream_negotiated
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="441-28750" to="prueba20090@alumchat.xyz/aa66whk8rw" from="alumchat.xyz"><query xmlns="jabber:iq:version" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="441-28750" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="prueba20090@alumchat.xyz/6nxynw630b" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <r xmlns="urn:xmpp:sm:3" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <a xmlns="urn:xmpp:sm:3" h="5" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="712-28751" from="alumchat.xyz" to="prueba20090@alumchat.xyz/aa66whk8rw"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="712-28751" to="alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/aa66whk8rw" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/7b0pwoivr5" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="prueba20090@alumchat.xyz/7mv6ahi4wx" to="prueba20090@alumchat.xyz/6v01losj1m" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <r xmlns="urn:xmpp:sm:3" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <a xmlns="urn:xmpp:sm:3" h="5" />
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="583-28754" from="alumchat.xyz" to="prueba20090@alumchat.xyz/6v01losj1m"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="583-28754" to="alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="743-28755" from="alumchat.xyz" to="prueba20090@alumchat.xyz/aa66whk8rw"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="743-28755" to="alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <r xmlns="urn:xmpp:sm:3" />
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <a xmlns="urn:xmpp:sm:3" h="5" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="286-28756" from="alumchat.xyz" to="prueba20090@alumchat.xyz/6v01losj1m"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="286-28756" to="alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="440-28761" from="alumchat.xyz" to="prueba20090@alumchat.xyz/7b0pwoivr5"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="440-28761" to="alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  

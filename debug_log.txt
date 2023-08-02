@@ -610,3 +610,5 @@ DEBUG:slixmpp.plugins.xep_0199.ping:Pinged by alumchat.xyz
 DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="result" id="440-28761" to="alumchat.xyz" />
 DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
 DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  

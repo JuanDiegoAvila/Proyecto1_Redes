@@ -8,7 +8,6 @@ import ssl
 
 ssl.match_hostname = lambda cert, hostname: True
 
-
 SERVER = "alumchat.xyz"
 
 logging.basicConfig(level=logging.DEBUG, filename='debug_log.txt')

@@ -22,6 +22,8 @@ class Client(ClientXMPP):
         self.password = password
         self.conected = False
 
+        self.register_plugin('xep_0313') 
+
         self.add_event_handler("session_start", self.start)
         self.add_event_handler("message", self.message)
         self.add_event_handler("disconnected", self.desconectar)
@@ -53,7 +55,7 @@ class Client(ClientXMPP):
             print("Tiempo de inicio de sesion excedido.")
             print("\n==========================================================\n")
 
-    def message(self, msg):
+    async def message(self, msg):
         if msg['type'] in ('normal', 'chat'):
             print("\n==========================================================\n")
             print(f"Se recivió un mensaje de {msg['from']} -> {msg['body']}")
@@ -117,11 +119,13 @@ class Client(ClientXMPP):
 
                 if not presence:
                     print(f"\t\tEstado -> Desconectado")
+
+            print(f"\n-------------{'-'*len(contact)}-------------\n")
                         
 
 
         
-        input('Presiona ENTER para continuar ...\n\n')
+        input('\n\nPresiona ENTER para continuar ...\n\n')
         
         print("\n==========================================================\n")
             
@@ -130,7 +134,6 @@ class Client(ClientXMPP):
     async def agregar_contacto(self, jid):
         try:
             print("\n===================== Agregar contacto ==========================\n")
-            print("Contactos:")
             self.send_presence_subscription(pto=jid)
             await self.get_roster()
             print("\n==========================================================\n")
@@ -179,7 +182,6 @@ class Client(ClientXMPP):
                         if presence['status']:
                             print(f'\t\tMensaje -> {presence["status"]}')
 
-
                 if not presence:
                     print(f"\t\tEstado -> Desconectado")
                         
@@ -188,6 +190,63 @@ class Client(ClientXMPP):
         
         input('Presiona ENTER para continuar ...\n\n')
         print("\n==========================================================\n")
+
+
+    async def cambiar_estado(self):
+        print("\n===================== Cambiar estado/mensaje ==========================\n")
+        await self.get_roster()
+        print('\t[ 1 ] Estado.')
+        print('\t[ 2 ] Mensaje. ')
+        opcion = input('\nOpcion -> ')
+
+        if opcion == '1':
+            print("\n==========================================================\n")
+            print('\t[ 1 ] Disponible.')
+            print('\t[ 2 ] Ocupado. ')
+            print('\t[ 3 ] No disponible. ')
+            print('\t[ 4 ] Ausente. ')
+            opcion = input('\nOpcion -> ')
+            
+            if opcion == '1':
+                self.send_presence(pshow='chat')
+            elif opcion == '2':
+                self.send_presence(pshow='dnd')
+            elif opcion == '3':
+                self.send_presence(pshow='xa')
+            elif opcion == '4':
+                self.send_presence(pshow='away')
+        
+        elif opcion == '2':
+            print("\n==========================================================\n")
+            mensaje = input('Mensaje -> ')
+            self.send_presence(pstatus=mensaje)
+
+        input('\nPresiona ENTER para continuar ...\n\n')
+        print("\n==========================================================\n")
+
+    def eliminar_cuenta(self):
+        delete_stanza = f"""
+                <iq type="set" id="delete-account">
+                <query xmlns="jabber:iq:register">
+                    <remove jid="{self.username}"/>
+                </query>
+                </iq>
+            """
+
+        print(self.send_raw(delete_stanza))
+        self.conected = False
+
+    async def enviar_mensaje(self, destinatario):
+        print(f"\n===================== Chat con {destinatario} ==========================\n")
+        
+        mensaje = ''
+        while mensaje != 'salir':
+            await self.get_roster()
+            mensaje = input("Mensaje -> ")
+            
+            if mensaje != 'salir':
+                self.send_message(mto=destinatario, mbody=mensaje, mtype='chat')
+        print("\n==============================================================================\n")
 
     async def run_main_event_loop(self):
 
@@ -220,30 +279,27 @@ class Client(ClientXMPP):
                 await self.ver_detalle_contacto(jid)
 
             elif opcion == "4":
-                pass
+                print("\n===================== Enviar mensaje a un usuario ==========================\n")
+                jid = input("Ingrese el JID del contacto -> ")
+                jid = jid + "@" + SERVER
+                await self.enviar_mensaje(jid)
             elif opcion == "5":
                 pass
             elif opcion == "6":
                 pass
             elif opcion == "7":
-                pass
+                await self.cambiar_estado()
             elif opcion == "8":
-                await self.eliminar_cuenta()
+                self.eliminar_cuenta()
             elif opcion == "9":
                 await self.cerrar_sesion()
-    # def enviar_mensaje(self, destinatario, mensaje):
-    #     self.send_message(mto=destinatario, mbody=mensaje, mtype='chat')
-    
+
     # def enviar_mensaje_grupo(self, destinatario, mensaje):
     #     self.send_message(mto=destinatario, mbody=mensaje, mtype='groupchat')
 
     # def crear_grupo(self, nombre_grupo):
     #     self.plugin['xep_0045'].join_muc(nombre_grupo, self.username)
 
-    # def cambiar_estado(self, estado):
-    #     self.send_presence(pshow=estado)
-
-    # def eliminar_cuenta(self):
-    #     self.plugin['xep_0030'].del_item(node='account')
+    
 
 

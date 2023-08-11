@@ -4,6 +4,7 @@ import xmpp
 import logging
 import sys
 import asyncio
+from aioconsole import ainput
 
 SERVER = "alumchat.xyz"
 
@@ -11,7 +12,6 @@ logging.basicConfig(level=logging.DEBUG, filename='debug_log.txt')
 
 if sys.platform == 'win32' and sys.version_info >= (3, 8):
      asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
 
 class Client(ClientXMPP):
 
@@ -21,12 +21,38 @@ class Client(ClientXMPP):
         self.username = jid.split('@')[0]
         self.password = password
         self.conected = False
+        self.en_chat = False
 
         self.register_plugin('xep_0313') 
+        self.register_plugin('xep_0004')
+        self.register_plugin('xep_0045')
 
         self.add_event_handler("session_start", self.start)
         self.add_event_handler("message", self.message)
         self.add_event_handler("disconnected", self.desconectar)
+        # self.add_event_handler("subscribed", self.solicitud_contacto)
+        self.add_event_handler("changed_status", self.cambio_estado)
+
+    async def cambio_estado(self, presence):
+        print("\n==========================================================\n")
+        estado_encoded = ''
+
+        if presence['type'] == 'unavailable':
+            print(f"{presence['from']} ha cambiado a estado no disponible.")
+        else:
+            estado = presence['show']
+            status = presence['status']
+            if estado == 'dnd':
+                estado_encoded = 'Ocupado'
+            elif estado == 'xa':
+                estado_encoded = 'No disponible'
+            elif estado == 'away':
+                estado_encoded = 'Ausente'
+            else:
+                estado_encoded = 'Disponible'
+                
+            print(f"{presence['from']} ha cambiado a estado {estado_encoded}: {status}")
+        print("\n==========================================================\n")
 
     def desconectar(self, event):
         print("\n==========================================================\n")
@@ -56,10 +82,31 @@ class Client(ClientXMPP):
             print("\n==========================================================\n")
 
     async def message(self, msg):
+    
         if msg['type'] in ('normal', 'chat'):
-            print("\n==========================================================\n")
-            print(f"Se recivió un mensaje de {msg['from']} -> {msg['body']}")
-            print("\n==========================================================\n")
+            if(self.en_chat):
+                emisor = msg['from'].split('@')[0]
+                print(f"{emisor} -> {msg['body']}")
+            
+            else:
+                emisor = msg['from'].split('@')[0]
+                print(f"Se recivió un mensaje de {emisor} -> {msg['body']}")
+
+        if msg['type'] == 'groupchat':
+            if(self.en_chat):
+                emisor = msg['from'].split('/')[1]
+                print(f"{emisor} -> {msg['body']}")
+            else:
+                group = msg['from'].split('/')[0]
+                emisor = msg['from'].split('/')[1]
+                print(f"Se recivió un mensaje de {emisor} en el grupo {group} -> {msg['body']}")
+
+    # async def solicitud_contacto(self, presence):
+    #     print("\n==========================================================\n")
+    #     if presence["type"] == "subscribe":
+    #         print(f"Recibida solicitud de contacto de: {presence['from']}")
+    #         self.send_presence(pto=presence['from'], ptype='subscribed')
+    #     print("\n==========================================================\n")
 
     def registrar_usuario(self):
         jid = xmpp.JID(self.jid)
@@ -129,8 +176,6 @@ class Client(ClientXMPP):
         
         print("\n==========================================================\n")
             
-    
-      
     async def agregar_contacto(self, jid):
         try:
             print("\n===================== Agregar contacto ==========================\n")
@@ -191,7 +236,6 @@ class Client(ClientXMPP):
         input('Presiona ENTER para continuar ...\n\n')
         print("\n==========================================================\n")
 
-
     async def cambiar_estado(self):
         print("\n===================== Cambiar estado/mensaje ==========================\n")
         await self.get_roster()
@@ -241,11 +285,110 @@ class Client(ClientXMPP):
         
         mensaje = ''
         while mensaje != 'salir':
+            self.en_chat = True
             await self.get_roster()
             mensaje = input("Mensaje -> ")
             
             if mensaje != 'salir':
                 self.send_message(mto=destinatario, mbody=mensaje, mtype='chat')
+        print("\n==============================================================================\n")
+
+    async def elejir_contactos(self):
+        # obtener los contactos del usuario y mostrarlos para que elija
+        await self.get_roster()
+        contactos_agregados = []
+        contacts = self.client_roster.keys()
+
+        if not contacts:
+            print("No tienes contactos.")
+            return
+
+        print("\n===================== Contactos ==========================\n")
+        opcion = 0
+        while opcion != 'crear':
+            
+            num = 1
+            con = {}
+            act = 0
+
+            for contact in contacts:
+                if contact != self.jid and contact not in contactos_agregados:
+                    print(f"\t[ {num} ] {contact} ")
+                    act += 1
+                    con[num] = contact
+                    num += 1
+
+            if act != 0:
+                opcion = input("\nIngrese un contacto para agregar al grupo o escriba 'crear' para terminar -> ")
+                if opcion != 'crear':
+                    contactos_agregados.append(con[int(opcion)])
+                
+            else:
+                opcion = 'crear'
+
+        print("\n==========================================================\n")
+        return contactos_agregados
+    
+    async def crear_grupo(self, nombre):
+        
+        contactos_agregados = await self.elejir_contactos()
+        # crear el grupo
+        room_jid = f"{nombre}@conference.{SERVER}"
+
+        await self.plugin['xep_0045'].join_muc(room_jid, self.username)
+        # await asyncio.sleep(1)
+        response = self.plugin['xep_0004'].make_form(ftype='submit', title='Configuracion del grupo')
+
+        response['muc#roomconfig_roomname'] = nombre
+        response['muc#roomconfig_persistentroom'] = '1'
+        response['muc#roomconfig_publicroom'] = '1'
+        response['muc#roomconfig_membersonly'] = '0'
+        response['muc#roomconfig_allowinvites'] = '1'
+        response['muc#roomconfig_enablelogging'] = '1'
+        response['muc#roomconfig_changesubject'] = '1'
+        response['muc#roomconfig_maxusers'] = '100'
+        response['muc#roomconfig_whois'] = 'anyone'
+        response['muc#roomconfig_roomdesc'] = 'Chat con mis contactos'
+        response['muc#roomconfig_roomowners'] = self.username
+
+        await self.plugin['xep_0045'].set_room_config(room_jid, config=response)
+
+        # agregar los contactos al grupo
+        for contacto in contactos_agregados:
+            self.plugin['xep_0045'].invite(room=room_jid, jid=contacto, reason=None)
+        
+        input('\nSe creo el grupo exisosamente. Presiona ENTER para continuar ...\n\n')
+        print("\n==========================================================\n")
+
+    async def unirse_a_grupo(self, nombre):
+        room_jid = f"{nombre}@conference.{SERVER}"
+        await self.plugin['xep_0045'].join_muc(room_jid, self.username)
+        
+        input('\nSe unio al grupo exisosamente. Presiona ENTER para continuar ...\n\n')
+
+        print("\n==========================================================\n")
+
+    async def invitar_a_grupo(self, nombre):
+        contactos_agregados = await self.elejir_contactos()
+        room_jid = f"{nombre}@conference.{SERVER}"
+
+        for contacto in contactos_agregados:
+            self.plugin['xep_0045'].invite(room=room_jid, jid=contacto, reason=None)
+        
+        input('\nSe invito usuarios a grup exisosamente. Presiona ENTER para continuar ...\n\n')
+
+        print("\n==========================================================\n")
+
+    async def enviar_mensaje_grupo(self, nombre):
+        room_jid = f"{nombre}@conference.{SERVER}"
+        mensaje = ''
+        while mensaje != 'salir':
+            self.en_chat = True
+            await self.get_roster()
+            mensaje = input("Mensaje -> ")
+            
+            if mensaje != 'salir':
+                self.send_message(mto=room_jid, mbody=mensaje, mtype='groupchat')
         print("\n==============================================================================\n")
 
     async def run_main_event_loop(self):
@@ -258,47 +401,64 @@ class Client(ClientXMPP):
             print("[ 4 ] Enviar mensaje a un usuario")
             print("[ 5 ] Enviar mensaje a un grupo")
             print("[ 6 ] Crear grupo")
-            print("[ 7 ] Cambiar estado de cuenta")
-            print("[ 8 ] Eliminar cuenta del servidor")
-            print("[ 9 ] Cerrar sesion")
-            opcion = input("\nIngrese una opcion -> ")
+            print("[ 7 ] Unirse a un grupo")
+            print("[ 8 ] Invitar a un usuario a un grupo")
+            print("[ 9 ] Cambiar estado de cuenta")
+            print("[ 10 ] Eliminar cuenta del servidor")
+            print("[ 11 ] Cerrar sesion")
+            opcion = await ainput("\nIngrese una opcion -> ")
 
             if opcion == "1":
                 await self.ver_contactos()
 
             elif opcion == "2":
-                jid = input("Ingrese el JID del contacto -> ")
+                print("\n===================== Agregar contacto ==========================\n")
+                jid = await ainput("Ingrese el JID del contacto -> ")
                 jid = jid + "@" + SERVER
                 await self.agregar_contacto(jid)
 
             elif opcion == "3":
                 
                 print("\n===================== Ver detalle de contacto ==========================\n")
-                jid = input("Ingrese el JID del contacto -> ")
+                jid = await ainput("Ingrese el JID del contacto -> ")
                 jid = jid + "@" + SERVER
                 await self.ver_detalle_contacto(jid)
 
             elif opcion == "4":
                 print("\n===================== Enviar mensaje a un usuario ==========================\n")
-                jid = input("Ingrese el JID del contacto -> ")
+                jid = await ainput("Ingrese el JID del contacto -> ")
                 jid = jid + "@" + SERVER
                 await self.enviar_mensaje(jid)
+            
             elif opcion == "5":
-                pass
+                print("\n===================== Enviar mensaje a un grupo ==========================\n")
+                nombre_grupo = await ainput("Ingrese el nombre del grupo -> ")
+                await self.enviar_mensaje_grupo(nombre_grupo)
+            
             elif opcion == "6":
-                pass
+                print("\n===================== Crear grupo ==========================\n")
+                nombre_grupo = await ainput("Ingrese el nombre del grupo -> ")
+                await self.crear_grupo(nombre_grupo)
+            
             elif opcion == "7":
-                await self.cambiar_estado()
+                print("\n===================== Unirse a grupo ==========================\n")
+                nombre_grupo = await ainput("Ingrese el nombre del grupo -> ")
+                await self.unirse_a_grupo(nombre_grupo)
+            
             elif opcion == "8":
-                self.eliminar_cuenta()
+                print("\n===================== Invitar a grupo ==========================\n")
+                nombre_grupo = await ainput("Ingrese el nombre del grupo -> ")
+                await self.invitar_a_grupo(nombre_grupo)
+            
             elif opcion == "9":
+                await self.cambiar_estado()
+            
+            elif opcion == "10":
+                self.eliminar_cuenta()
+            
+            elif opcion == "11":
                 await self.cerrar_sesion()
 
-    # def enviar_mensaje_grupo(self, destinatario, mensaje):
-    #     self.send_message(mto=destinatario, mbody=mensaje, mtype='groupchat')
-
-    # def crear_grupo(self, nombre_grupo):
-    #     self.plugin['xep_0045'].join_muc(nombre_grupo, self.username)
 
     
 

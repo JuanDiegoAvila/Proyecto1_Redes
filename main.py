@@ -19,11 +19,11 @@ def menu_principal():
             jid = input("Ingrese su JID de la forma (nombre+carnet-texto) -> ")
             contraseña = input("Ingrese su contraseña -> ")
 
-            cliente = Client(jid + "@" + SERVER, contraseña)
+            cliente = Client(jid + "@" + SERVER, contraseña) # Se crea un cliente con el JID y la contraseña
             
             # cliente.start_plugins()
-            cliente.connect(disable_starttls=True, use_ssl=False)
-            cliente.process(forever=False)
+            cliente.connect(disable_starttls=True, use_ssl=False) # Se conecta el cliente al servidor, se eliminan los certificados
+            cliente.process(forever=False)  # Se procesa el cliente para que se mantenga conectado
             
             
         elif opcion == "2":
@@ -32,9 +32,9 @@ def menu_principal():
             jid = input("Ingrese su nuevo JID de la forma (nombre+carnet-texto) -> ")
             contraseña = input("Ingrese su contraseña -> ")
 
-            nuevo_usuario = Client(jid + "@" + SERVER, contraseña)
-            nuevo_usuario.registrar_usuario()
-            nuevo_usuario.disconnect()
+            nuevo_usuario = Client(jid + "@" + SERVER, contraseña) # Se crea un cliente con el JID y la contraseña solo para el registro
+            nuevo_usuario.registrar_usuario() # Se registra el usuario
+            nuevo_usuario.disconnect()  # Se desconecta el cliente para regresar al menu principal
 
             # Regresar al menu principal luego del registro
             menu_principal()

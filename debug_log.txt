@@ -11524,3 +11524,130 @@ DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq id="2915928235e94d61a0e5f9bdbbf5d400
 DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="result" id="2915928235e94d61a0e5f9bdbbf5d400" to="prueba20090@alumchat.xyz/4jphk1568o" />
 DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: roster_update
 DEBUG:slixmpp.xmlstream.xmlstream:SEND: <message type="chat" to="gonzalez20293@alumchat.xyz" id="d018573ec5814b6ca70d11f313e633d4" xml:lang="en"><body>file|jpg|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</body></message>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archi161250@alumchat.xyz/4oa15o2af4" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="148-100505" from="alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="148-100505" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="51337c43fcad48eb9ba99cfaaa4fccf5" xml:lang="en" from="archi161250@alumchat.xyz/88lv0y562w" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archi161250@alumchat.xyz/88lv0y562w" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="14647dc0200c440db59939d1589325e2" xml:lang="en" from="archi161250@alumchat.xyz/1ihklv83vh" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="292-101321" from="alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="292-101321" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archi161250@alumchat.xyz/1ihklv83vh" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="27d11de9fc844a26bd216250338f08e1" xml:lang="en" from="archi161250@alumchat.xyz/9wa0k3k7lo" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="e760033b91a541559ff880be68b966ea" xml:lang="en" from="aristondo208802@alumchat.xyz/ae7db72mp2" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <message from="archiles2@conference.alumchat.xyz" to="prueba20090@alumchat.xyz"><stanza-id xmlns="urn:xmpp:sid:0" id="93753cb5-88b3-433f-be41-c9d7aa6cd4a0" by="archiles2@conference.alumchat.xyz" /><x xmlns="http://jabber.org/protocol/muc#user"><invite from="archi161250@alumchat.xyz"><reason>Invitación a chat de grupo</reason></invite></x><x xmlns="jabber:x:conference" jid="archiles2@conference.alumchat.xyz" /></message>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_invite
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <presence to="archiles2@conference.alumchat.xyz/prueba20090" id="e811539eb2624e2fa7bb222dbf6e526f" xml:lang="en"><x xmlns="http://jabber.org/protocol/muc"><history maxchars="9" /></x></presence>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence to="prueba20090@alumchat.xyz/4jphk1568o" id="0fca9f46c8cc42f3a4a83cfc080b3c58" xml:lang="en" from="archiles2@conference.alumchat.xyz/archi161250@alumchat.xyz"><x xmlns="http://jabber.org/protocol/muc#user"><item jid="archi161250@alumchat.xyz/9wa0k3k7lo" affiliation="owner" role="moderator" /></x></presence>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.plugins.xep_0045.muc:MUC presence from archiles2@conference.alumchat.xyz/archi161250@alumchat.xyz : {'lang': 'en', 'affiliation': 'owner', 'jid': 'archi161250@alumchat.xyz/9wa0k3k7lo', 'room': 'archiles2@conference.alumchat.xyz', 'nick': 'archi161250@alumchat.xyz', 'status_codes': set(), 'role': 'moderator', 'item|en': {'lang': 'en', 'reason': '', 'affiliation': 'owner', 'jid': 'archi161250@alumchat.xyz/9wa0k3k7lo', 'nick': '', 'role': 'moderator'}, 'show': None, 'status': '', 'alt_nick': ''}
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::got_online
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence to="prueba20090@alumchat.xyz/4jphk1568o" id="e811539eb2624e2fa7bb222dbf6e526f" xml:lang="en" from="archiles2@conference.alumchat.xyz/prueba20090"><x xmlns="http://jabber.org/protocol/muc#user"><item jid="prueba20090@alumchat.xyz/4jphk1568o" affiliation="none" role="participant" /><status code="110" /><status code="100" /><status code="170" /></x></presence>
+DEBUG:slixmpp.plugins.xep_0045.muc:MUC presence from archiles2@conference.alumchat.xyz/prueba20090 : {'lang': 'en', 'affiliation': 'none', 'jid': 'prueba20090@alumchat.xyz/4jphk1568o', 'room': 'archiles2@conference.alumchat.xyz', 'nick': 'prueba20090', 'status_codes': {170, 100, 110}, 'role': 'participant', 'item|en': {'lang': 'en', 'reason': '', 'affiliation': 'none', 'jid': 'prueba20090@alumchat.xyz/4jphk1568o', 'nick': '', 'role': 'participant'}, 'status|en': {'lang': 'en', 'code': '170'}, 'show': None, 'status': '', 'alt_nick': ''}
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::self-presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::got_online
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <message from="archiles2@conference.alumchat.xyz" type="groupchat" id="522ff43b-aa82-40b6-b806-e3b26dfbef86" to="prueba20090@alumchat.xyz/4jphk1568o"><subject /></message>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_subject
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::groupchat_subject
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="aristondo208802@alumchat.xyz/ae7db72mp2" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="db66313c82fc4841aae9f7588d033b00" xml:lang="en" from="aristondo208802@alumchat.xyz/36w8u9uma5" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence to="prueba20090@alumchat.xyz/4jphk1568o" id="aa88437c91a549df97fd84e206ab11a1" xml:lang="en" from="archiles2@conference.alumchat.xyz/prueba20240"><x xmlns="http://jabber.org/protocol/muc#user"><item jid="prueba20240@alumchat.xyz/2zfhagp726" affiliation="none" role="participant" /></x></presence>
+DEBUG:slixmpp.plugins.xep_0045.muc:MUC presence from archiles2@conference.alumchat.xyz/prueba20240 : {'lang': 'en', 'affiliation': 'none', 'jid': 'prueba20240@alumchat.xyz/2zfhagp726', 'room': 'archiles2@conference.alumchat.xyz', 'nick': 'prueba20240', 'status_codes': set(), 'role': 'participant', 'item|en': {'lang': 'en', 'reason': '', 'affiliation': 'none', 'jid': 'prueba20240@alumchat.xyz/2zfhagp726', 'nick': '', 'role': 'participant'}, 'show': None, 'status': '', 'alt_nick': ''}
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::got_online
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <message type="groupchat" to="prueba20090@alumchat.xyz/4jphk1568o" id="a96dabe3fa81473aaf6c2fcf6b91ddf1" xml:lang="en" from="archiles2@conference.alumchat.xyz/prueba20240"><body>pipi</body><stanza-id xmlns="urn:xmpp:sid:0" id="07b3cf75-3bfb-4f1e-863f-259ab2a68088" by="archiles2@conference.alumchat.xyz" /><addresses xmlns="http://jabber.org/protocol/address"><address type="ofrom" jid="prueba20240@alumchat.xyz" /></addresses></message>
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: message
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_message
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::message
+WARNING:slixmpp.basexmpp:username property deprecated. Use boundjid.user
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archiles2@conference.alumchat.xyz/prueba20240" to="prueba20090@alumchat.xyz/4jphk1568o"><x xmlns="http://jabber.org/protocol/muc#user"><item jid="prueba20240@alumchat.xyz/2zfhagp726" affiliation="none" role="none" /></x></presence>
+DEBUG:slixmpp.plugins.xep_0045.muc:MUC presence from archiles2@conference.alumchat.xyz/prueba20240 : {'lang': '', 'affiliation': 'none', 'jid': 'prueba20240@alumchat.xyz/2zfhagp726', 'room': 'archiles2@conference.alumchat.xyz', 'nick': 'prueba20240', 'status_codes': set(), 'role': 'none', 'item': {'lang': '', 'reason': '', 'affiliation': 'none', 'jid': 'prueba20240@alumchat.xyz/2zfhagp726', 'nick': '', 'role': 'none'}, 'show': None, 'status': '', 'alt_nick': ''}
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="168-102392" from="alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="168-102392" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="aristondo208802@alumchat.xyz/36w8u9uma5" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence id="3b4ba0ddb27a49549854db6edd2d5035" xml:lang="en" from="aristondo208802@alumchat.xyz/3ojglewqjk" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_available
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_online
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archi161250@alumchat.xyz/9wa0k3k7lo" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="archiles2@conference.alumchat.xyz/archi161250@alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><x xmlns="http://jabber.org/protocol/muc#user"><item jid="archi161250@alumchat.xyz/9wa0k3k7lo" affiliation="owner" role="none" /></x></presence>
+DEBUG:slixmpp.plugins.xep_0045.muc:MUC presence from archiles2@conference.alumchat.xyz/archi161250@alumchat.xyz : {'lang': '', 'affiliation': 'owner', 'jid': 'archi161250@alumchat.xyz/9wa0k3k7lo', 'room': 'archiles2@conference.alumchat.xyz', 'nick': 'archi161250@alumchat.xyz', 'status_codes': set(), 'role': 'none', 'item': {'lang': '', 'reason': '', 'affiliation': 'owner', 'jid': 'archi161250@alumchat.xyz/9wa0k3k7lo', 'nick': '', 'role': 'none'}, 'show': None, 'status': '', 'alt_nick': ''}
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: groupchat_presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: muc::archiles2@conference.alumchat.xyz::got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="571-102781" from="alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="571-102781" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <presence type="unavailable" from="aristondo208802@alumchat.xyz/3ojglewqjk" to="prueba20090@alumchat.xyz" />
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: presence_unavailable
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: changed_status
+DEBUG:slixmpp.xmlstream.xmlstream:Event triggered: got_offline
+DEBUG:slixmpp.xmlstream.xmlstream:RECV: <iq type="get" id="486-103310" from="alumchat.xyz" to="prueba20090@alumchat.xyz/4jphk1568o"><ping xmlns="urn:xmpp:ping" /></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:SEND: <iq type="error" id="486-103310" to="alumchat.xyz"><error type="cancel"><feature-not-implemented xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /><text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">No handlers registered for this request.</text></error></iq>
+DEBUG:slixmpp.xmlstream.xmlstream:Scheduled event: Whitespace Keepalive
+DEBUG:slixmpp.xmlstream.xmlstream:SEND:  

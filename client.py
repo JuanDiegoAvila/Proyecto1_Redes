@@ -95,6 +95,18 @@ class Client(ClientXMPP):
     async def message(self, msg):
     
         if msg['type'] in ('normal', 'chat'):
+
+            if 'file|' in msg['body']:
+                partes = msg['body'].split('|')
+                extension = partes[1]
+                data = partes[2]
+                data = base64.b64decode(data)
+                with open(f"./archivos/recibido.{extension}", 'wb') as file:
+                    file.write(data)
+                    file.close()
+
+                await aprint(f"\nSe recibio un archivo de {msg['from']} con extension {extension}.\n")
+
             if msg['from'] != self.jid:
                 if(self.en_chat):
                     emisor = str(msg['from']).split('@')[0]
@@ -398,14 +410,17 @@ class Client(ClientXMPP):
         await aprint("\n==============================================================================\n")
 
     async def enviar_archivo(self, nombre, path):
+        print(f"\n===================== Enviar archivo ==========================\n")
         with open(path, 'rb') as file:
             data = file.read()
-            file_data_base64 = base64.b64encode(data).decode('utf-8')
+            base64_data = base64.b64encode(data).decode('utf-8')
 
-        message = "file|" + path.split('.')[-1] + "|" + file_data_base64 
+        contenido = "file|" + path.split('.')[-1] + "|" + base64_data 
 
-        self.send_message(mto=nombre, mbody=message, mtype='chat')
-        print(f"File '{path}' enviado a {path}")
+        self.send_message(mto=nombre, mbody=contenido, mtype="chat")
+        print(f"\n Archivo enviado a {nombre} correctamente!")
+
+        print(f"\n================================================================\n")
 
     async def run_main_event_loop(self):
 
@@ -441,7 +456,7 @@ class Client(ClientXMPP):
                 await self.ver_detalle_contacto(jid)
 
             elif opcion == "4":
-                await aprint("\n===================== Enviar mensaje a un usuario ==========================\n")
+                await aprint("\n===================== Envio de mensajes ==========================\n")
                 
                 opcion_chat = 0
                 while opcion_chat != '1' and opcion_chat != '2':
@@ -454,11 +469,11 @@ class Client(ClientXMPP):
                     jid = jid + "@" + SERVER
                     await self.enviar_mensaje(jid)
 
-                # elif opcion_chat == '2':
-                #     jid = await ainput("Ingrese el JID del contacto -> ")
-                #     jid = jid + "@" + SERVER
-                #     archivo = await ainput("Ingrese la ruta del archivo -> ")
-                #     await self.send_file(jid, archivo)
+                elif opcion_chat == '2':
+                    jid = await ainput("Ingrese el JID del contacto -> ")
+                    jid = jid + "@" + SERVER
+                    archivo = await ainput("Ingrese la ruta del archivo -> ")
+                    await self.enviar_archivo(jid, archivo)
             
             elif opcion == "5":
                 await aprint("\n===================== Enviar mensaje a un grupo ==========================\n")
